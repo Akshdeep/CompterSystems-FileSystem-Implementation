@@ -1,0 +1,98 @@
+read/write block size: 1000
+cmd> ls-l file.A
+/file.A -rwxrwxrwx 1000 1 Fri Jul 13 11:04:40 2012
+cmd> chmod 555 file.A
+cmd> ls-l file.A
+/file.A -r-xr-xr-x 1000 1 Fri Jul 13 11:04:40 2012
+cmd> chmod 754 file.A
+cmd> ls-l file.A
+/file.A -rwxr-xr-- 1000 1 Fri Jul 13 11:04:40 2012
+cmd> mkdir dir2
+cmd> mkdir dir1/dir3
+cmd> ls
+dir1
+dir2
+file.7
+file.A
+cmd> rename file.999 file.000
+error: No such file or directory
+cmd> rename file.A file.7
+error: File exists
+cmd> rename file.A ./dir1/file4
+error: Invalid argument
+cmd> rename file.7 file.B
+cmd> put /tmp/test2-file.1 file.1
+cmd> put /tmp/test2-file.2 file.2
+cmd> put /tmp/test2-file.3 file.3
+cmd> put /tmp/test2-file.0 file.0
+cmd> ls
+dir1
+dir2
+file.0
+file.1
+file.2
+file.3
+file.A
+file.B
+cmd> show file.2
+1 2 3 1 2 3 1 2 3 1 cmd> show file.3
+3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+3 3 3 3 3 3 3 cmd> show file.0
+cmd> put /tmp/test2-file.3 file.0
+error: File exists
+cmd> show file.0
+cmd> rm file.A
+error: Is a directory
+cmd> ls
+dir1
+dir2
+file.0
+file.1
+file.2
+file.3
+file.A
+file.B
+cmd> rm dir2
+error: Is a directory
+cmd> rmdir dir2
+cmd> rmdir dir1
+error: Directory not empty
+cmd> ls
+dir1
+file.0
+file.1
+file.2
+file.3
+file.A
+file.B
+cmd> rm file.999
+error: No such file or directory
+cmd> rmdir dir000
+error: No such file or directory
+cmd> truncate file.B
+cmd> ls
+dir1
+file.0
+file.1
+file.2
+file.3
+file.A
+file.B
+cmd> truncate file.A
+cmd> get dir1
+cmd> get file.1 /tmp/get-file.1
+cmd> quit
+

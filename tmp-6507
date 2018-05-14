@@ -1,0 +1,22 @@
+q/dir1:
+total 136
+drwxr-xr-x 1 student student      0 2018-04-15 22:51 dir1.1
+drwxr-xr-x 1 student student      0 2018-04-15 22:51 dir1.2
+drwxr-xr-x 1 student student      0 2018-04-15 22:51 dir2
+-rwxrwxrwx 1 student student      0 2012-07-13 11:04 file.0
+-rwxrwxrwx 1 student student   2012 2012-07-13 11:04 file.2
+-rwxrwxrwx 1 student student 276177 2012-07-13 11:06 file.270
+-rw-r--r-- 1 student student      0 1935-09-22 08:51 file.3
+
+q/dir1/dir1.1:
+total 0
+
+q/dir1/dir1.2:
+total 0
+
+q/dir1/dir2:
+total 0
+drwxr-xr-x 1 student student 0 2018-04-15 22:51 dir3
+
+q/dir1/dir2/dir3:
+total 0
